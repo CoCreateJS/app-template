@@ -19,7 +19,7 @@ export default {
         "worker": "*",
         "config": {
             "enabled": true,
-            "localFsRoot": "/home/ubuntu/Dev/CoCreateJS/server/organizations",
+            "localFsRoot": "/home/ubuntu/Dev/CoCreateJS/modules/server/organizations",
             "api": "github-organizations",
             "getEndpoint": "get-organization-repository",
             "createEndpoint": "create-organization-repository",
