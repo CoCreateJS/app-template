@@ -28,11 +28,11 @@
 							role="button"
 							tabindex="0"
 							state-to="offcanvas-app-view"
-							state.src="/apps/servers/configs/app.html"
+							state.src="/apps/configs/app.html"
 							aria-controls="offcanvas-app"
 							aria-haspopup="dialog"
 							aria-expanded="false"
-							aria-open><span state-to="offcanvas-app-form" state.array="servers_config" state.object="{{object._id}}" hidden></span>{{object.name}}</a>
+							aria-open><span state-to="offcanvas-app-form" state.array="configs" state.object="{{object._id}}" hidden></span>{{object.name}}</a>
 					</h5>
 				</div>
 				<div class="app-badges">
@@ -71,4 +71,4 @@
 		</div>
 	</article>
 </template>
-<div onload.array="servers_config" onload-query="$parent"></div>
+<div onload.array="configs" onload-query="$parent"></div>

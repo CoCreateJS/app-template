@@ -22,16 +22,16 @@ export default {
     "array": "apps",
     "object": {
         "_id": "6a96308fbe321a28ad3edec1",
-        "name": "Server Configs",
-        "singularName": "Server Config",
-        "path": "/apps/servers/configs",
-        "card": "/apps/servers/configs/components/card.html",
-        "cardTemplate": "/apps/servers/configs/templates/card.html",
+        "name": "Configs",
+        "singularName": "Config",
+        "path": "/apps/configs",
+        "card": "/apps/configs/components/card.html",
+        "cardTemplate": "/apps/configs/templates/card.html",
         "templates": {
             "card": "templates/card.html",
             "list": "templates/list.html"
         },
-        "array": "servers_config",
+        "array": "configs",
         "category": "Settings",
         "mainViews": [
             "table",
@@ -47,11 +47,11 @@ export default {
             {
                 "label": "Name",
                 "tagName": "input",
-                "filterTemplate": "<input id=\"server-config-name-filter\" class=\"form-control\" type=\"text\" placeholder=\"Filter by name\" filter-query=\"$document .list-view\" filter-query-key=\"name.$regex\" filter-query-options=\"i\" />",
-                "tableTemplate": "\n          <a role=\"button\" tabindex=\"0\" class=\"name\" state-to=\"offcanvas-app-view\" state.src=\"/apps/servers/configs/app.html\" aria-controls=\"offcanvas-app\" aria-haspopup=\"dialog\" aria-expanded=\"false\" aria-open>\n            <div state-to=\"offcanvas-app-form\" state.array=\"servers_config\" state.object=\"{{object._id}}\"></div>\n            <span>{{object.name}}</span>\n          </a>\n        ",
+                "filterTemplate": "<input id=\"config-name-filter\" class=\"form-control\" type=\"text\" placeholder=\"Filter by name\" filter-query=\"$document .list-view\" filter-query-key=\"name.$regex\" filter-query-options=\"i\" />",
+                "tableTemplate": "\n          <a role=\"button\" tabindex=\"0\" class=\"name\" state-to=\"offcanvas-app-view\" state.src=\"/apps/configs/app.html\" aria-controls=\"offcanvas-app\" aria-haspopup=\"dialog\" aria-expanded=\"false\" aria-open>\n            <div state-to=\"offcanvas-app-form\" state.array=\"configs\" state.object=\"{{object._id}}\"></div>\n            <span>{{object.name}}</span>\n          </a>\n        ",
                 "attributes": [
                     { "name": "class", "value": "form-control" },
-                    { "name": "id", "value": "server-config-name" },
+                    { "name": "id", "value": "config-name" },
                     { "name": "key", "value": "name" },
                     { "name": "type", "value": "text" },
                     { "name": "required", "value": true }
@@ -60,11 +60,11 @@ export default {
             {
                 "label": "Type",
                 "tagName": "input",
-                "filterTemplate": "<select id=\"server-config-type-filter\" class=\"form-select\" filter-query=\"$document .list-view\" filter-query-key=\"type\"><option value=\"\">All types</option><option value=\"ai\">AI</option><option value=\"autoscaler\">Autoscaler</option><option value=\"storage\">Storage</option><option value=\"telemetry\">Telemetry</option></select>",
+                "filterTemplate": "<select id=\"config-type-filter\" class=\"form-select\" filter-query=\"$document .list-view\" filter-query-key=\"type\"><option value=\"\">All types</option><option value=\"ai\">AI</option><option value=\"autoscaler\">Autoscaler</option><option value=\"storage\">Storage</option><option value=\"telemetry\">Telemetry</option></select>",
                 "tableTemplate": "<span class=\"badge bg-primary-subtle text-primary text-uppercase\">{{object.type}}</span>",
                 "attributes": [
                     { "name": "class", "value": "form-control" },
-                    { "name": "id", "value": "server-config-type" },
+                    { "name": "id", "value": "config-type" },
                     { "name": "key", "value": "type" },
                     { "name": "type", "value": "text" },
                     { "name": "required", "value": true }
@@ -73,11 +73,11 @@ export default {
             {
                 "label": "Provider",
                 "tagName": "input",
-                "filterTemplate": "<input id=\"server-config-provider-filter\" class=\"form-control\" type=\"text\" placeholder=\"Filter by provider\" filter-query=\"$document .list-view\" filter-query-key=\"provider.$regex\" filter-query-options=\"i\" />",
+                "filterTemplate": "<input id=\"config-provider-filter\" class=\"form-control\" type=\"text\" placeholder=\"Filter by provider\" filter-query=\"$document .list-view\" filter-query-key=\"provider.$regex\" filter-query-options=\"i\" />",
                 "tableTemplate": "{{object.provider}}",
                 "attributes": [
                     { "name": "class", "value": "form-control" },
-                    { "name": "id", "value": "server-config-provider" },
+                    { "name": "id", "value": "config-provider" },
                     { "name": "key", "value": "provider" },
                     { "name": "type", "value": "text" }
                 ]
@@ -85,11 +85,11 @@ export default {
             {
                 "label": "Cluster",
                 "tagName": "input",
-                "filterTemplate": "<input id=\"server-config-cluster-filter\" class=\"form-control\" type=\"text\" placeholder=\"Filter by cluster\" filter-query=\"$document .list-view\" filter-query-key=\"cluster\" />",
+                "filterTemplate": "<input id=\"config-cluster-filter\" class=\"form-control\" type=\"text\" placeholder=\"Filter by cluster\" filter-query=\"$document .list-view\" filter-query-key=\"cluster\" />",
                 "tableTemplate": "<code>{{object.cluster}}</code>",
                 "attributes": [
                     { "name": "class", "value": "form-control" },
-                    { "name": "id", "value": "server-config-cluster" },
+                    { "name": "id", "value": "config-cluster" },
                     { "name": "key", "value": "cluster" },
                     { "name": "type", "value": "text" }
                 ]
@@ -97,11 +97,11 @@ export default {
             {
                 "label": "Server",
                 "tagName": "input",
-                "filterTemplate": "<input id=\"server-config-server-filter\" class=\"form-control\" type=\"text\" placeholder=\"Filter by server\" filter-query=\"$document .list-view\" filter-query-key=\"server\" />",
+                "filterTemplate": "<input id=\"config-server-filter\" class=\"form-control\" type=\"text\" placeholder=\"Filter by server\" filter-query=\"$document .list-view\" filter-query-key=\"server\" />",
                 "tableTemplate": "<code>{{object.server}}</code>",
                 "attributes": [
                     { "name": "class", "value": "form-control" },
-                    { "name": "id", "value": "server-config-server" },
+                    { "name": "id", "value": "config-server" },
                     { "name": "key", "value": "server" },
                     { "name": "type", "value": "text" }
                 ]
@@ -109,11 +109,11 @@ export default {
             {
                 "label": "Worker",
                 "tagName": "input",
-                "filterTemplate": "<input id=\"server-config-worker-filter\" class=\"form-control\" type=\"text\" placeholder=\"Filter by worker\" filter-query=\"$document .list-view\" filter-query-key=\"worker\" />",
+                "filterTemplate": "<input id=\"config-worker-filter\" class=\"form-control\" type=\"text\" placeholder=\"Filter by worker\" filter-query=\"$document .list-view\" filter-query-key=\"worker\" />",
                 "tableTemplate": "<code>{{object.worker}}</code>",
                 "attributes": [
                     { "name": "class", "value": "form-control" },
-                    { "name": "id", "value": "server-config-worker" },
+                    { "name": "id", "value": "config-worker" },
                     { "name": "key", "value": "worker" },
                     { "name": "type", "value": "text" }
                 ]
@@ -121,11 +121,11 @@ export default {
             {
                 "label": "Enabled",
                 "tagName": "input",
-                "filterTemplate": "<select id=\"server-config-enabled-filter\" class=\"form-select\" filter-query=\"$document .list-view\" filter-query-key=\"enabled\"><option value=\"\">Any state</option><option value=\"true\" value-type=\"boolean\">Enabled</option><option value=\"false\" value-type=\"boolean\">Disabled</option></select>",
+                "filterTemplate": "<select id=\"config-enabled-filter\" class=\"form-select\" filter-query=\"$document .list-view\" filter-query-key=\"enabled\"><option value=\"\">Any state</option><option value=\"true\" value-type=\"boolean\">Enabled</option><option value=\"false\" value-type=\"boolean\">Disabled</option></select>",
                 "tableTemplate": "<span class=\"badge bg-secondary-subtle text-secondary text-uppercase\">{{object.enabled}}</span>",
                 "attributes": [
                     { "name": "class", "value": "form-check-input" },
-                    { "name": "id", "value": "server-config-enabled" },
+                    { "name": "id", "value": "config-enabled" },
                     { "name": "key", "value": "enabled" },
                     { "name": "type", "value": "checkbox" }
                 ]
@@ -137,7 +137,7 @@ export default {
                 "tableTemplate": "{{object.updated.on}}",
                 "attributes": [
                     { "name": "class", "value": "form-control" },
-                    { "name": "id", "value": "server-config-updated" },
+                    { "name": "id", "value": "config-updated" },
                     { "name": "key", "value": "updated.on" },
                     { "name": "type", "value": "date" },
                     { "name": "readonly", "value": true }

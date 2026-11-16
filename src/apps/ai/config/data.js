@@ -6,7 +6,7 @@
 
 /**
  * Seed data for the AI instructions collection. Each object is an independently
- * managed instruction document; this file intentionally contains no server config.
+ * managed instruction document; this file intentionally contains no runtime config record.
  */
 export default {
     method: "object.update",
@@ -433,7 +433,7 @@ Illustrative optional endpoints object. Use this pattern for an executable serve
   "api_id": "API_OBJECT_ID",
   "name": "delete-instance",
   "method": "delete",
-  "endpoint": { "$concat": ["/instances/", "$payload.data.vmId"] },
+  "endpoint": { "$concat": ["/instances/", "$payload.data.id"] },
   "description": "Terminates the targeted provider instance.",
   "enabled": true
 }
@@ -520,7 +520,7 @@ The examples above illustrate record shape and composition, not literal IDs or a
                                 $null: ["$payload.data.zone", "$payload.data.region"]
                             },
                             "/instances/",
-                            "$payload.data.vmId"
+                            "$payload.data.id"
                         ]
                     }
                 },
@@ -623,7 +623,7 @@ The examples above illustrate record shape and composition, not literal IDs or a
             description: "Server guidance",
             default: true,
             enabled: true,
-            instructions: `Use manage_server_cluster to inspect server topology and perform validated operational controls. Server records are stored in the servers array and contain top-level server lifecycle state, master state, worker1..workerN state, location, and provider-agnostic infrastructure fields including provider, region, zone, vmId, and vmType.
+            instructions: `Use manage_server_cluster to inspect server topology and perform validated operational controls. Server records are stored in the servers array and contain top-level server lifecycle state, master state, worker1..workerN state, and a deployment object containing cloud, dns, location, provider, region, zone, id, and type.
 
 Worker controls:
 - cordon prevents a worker from accepting new edge traffic without terminating existing connections.
@@ -777,7 +777,7 @@ The socket client normally supplies clientId, frameId, socketId, organization_id
             description: "Server autoscaler configuration and scaling guidance",
             default: true,
             enabled: true,
-            instructions: `The CoCreate server autoscaler resolves its configuration from type="autoscaler" objects in the servers_config array. Configuration can be scoped with cluster, server, and worker; "*" applies at every value in that scope. Each object's config is merged into the resolved autoscaler configuration, and dot-notation keys such as "clouds.aws" are expanded into the corresponding nested object.
+            instructions: `The CoCreate server autoscaler resolves its configuration from type="autoscaler" objects in the configs array. Configuration can be scoped with cluster, server, and worker; "*" applies at every value in that scope. Each object's config is merged into the resolved autoscaler configuration, and dot-notation keys such as "clouds.aws" are expanded into the corresponding nested object.
 
 The resolved configuration contains:
 - scaleOut thresholds, consecutive flushes, and the maximum cluster size. maxClusterSize=0 means no configured maximum.
@@ -790,7 +790,7 @@ The resolved configuration contains:
 
 Geo-scaling uses client-location density to choose where capacity should be added. Each location is shaped as {latitude, longitude, continent, count}; count is its traffic weight and defaults to 1. The autoscaler totals those weights and calculates each continent's percentage of active clients. With geoScale.enabled=true, it orders continents by density, considers geoScale.sheddingThreshold as the minimum percentage for geographic shedding, calculates a weighted latitude/longitude centroid for the selected continent, and chooses the nearest configured cloud region. If no continent qualifies for shedding, it falls back to the highest-density continent. With geoScale.enabled=false, it calculates one global weighted centroid across all client locations and selects the nearest region globally. geoScale.densityBy is present in configuration, but the current runtime does not read it; grouping is currently fixed to continent when geo-scaling is enabled.
 
-Use manage_server_autoscaler with action=getConfig to inspect the resolved in-memory configuration. The tool currently reads but does not mutate config directly. Persist configuration changes with CRUD against the servers_config array. Those database changes are loaded and merged when the autoscaler initializes; the current tool does not expose a configuration reload action.
+Use manage_server_autoscaler with action=getConfig to inspect the resolved in-memory configuration. The tool currently reads but does not mutate config directly. Persist configuration changes with CRUD against the configs array. Those database changes are loaded and merged when the autoscaler initializes; the current tool does not expose a configuration reload action.
 
 The available autoscaler actions are getConfig, determineScaleOutTarget, scaleOut, determineScaleInTarget, and scaleIn. determineScaleOutTarget accepts client-location data and previews provider, region, instance type, and vertical tier selection. scaleOut accepts the same location data and provisions through the selected provider's configured create endpoint. determineScaleInTarget previews whether scale-in is allowed and selects a candidate while honoring minClusterSize. scaleIn accepts an explicit server object or determines a candidate, then calls that provider's configured delete endpoint.
 
@@ -798,7 +798,7 @@ Inspect configuration and use a determine action before invoking scaleOut or sca
             examples: [
                 {
                     method: "object.update",
-                    array: "servers_config",
+                    array: "configs",
                     upsert: true,
                     object: {
                         _id: "AUTOSCALER_CONFIG_ID",
@@ -844,7 +844,7 @@ Inspect configuration and use a determine action before invoking scaleOut or sca
                 },
                 {
                     method: "object.update",
-                    array: "servers_config",
+                    array: "configs",
                     upsert: true,
                     object: {
                         _id: "AWS_AUTOSCALER_PROVIDER_CONFIG_ID",

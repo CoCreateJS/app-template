@@ -5,14 +5,14 @@
  ********************************************************************************/
 
 /**
- * Seeding Payload: servers_config collection (Autoscaler)
+ * Seeding Payload: configs collection (Autoscaler)
  * 
  * Autoscaler configurations for cloud providers, instance types, regions,
- * and cluster autoscaling policies stored in the 'servers_config' array.
+ * and cluster autoscaling policies stored in the 'configs' array.
  */
 export default {
     "method": "object.update",
-    "array": "servers_config",
+    "array": "configs",
     "upsert": true,
     "object": [
         {

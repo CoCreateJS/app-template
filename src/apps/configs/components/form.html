@@ -15,7 +15,7 @@
 					Name
 					<input
 						type="text"
-						id="server-config-name"
+						id="config-name"
 						key="name"
 						class="form-control"
 						placeholder="Configuration name"
@@ -26,13 +26,13 @@
 					Type
 					<input
 						type="text"
-						id="server-config-type"
+						id="config-type"
 						key="type"
-						list="server-config-types"
+						list="config-types"
 						class="form-control text-lowercase"
 						placeholder="ai, autoscaler, storage, telemetry"
 						required />
-					<datalist id="server-config-types">
+					<datalist id="config-types">
 						<option value="ai"></option>
 						<option value="autoscaler"></option>
 						<option value="storage"></option>
@@ -44,7 +44,7 @@
 					Provider
 					<input
 						type="text"
-						id="server-config-provider"
+						id="config-provider"
 						key="provider"
 						class="form-control text-lowercase"
 						placeholder="aws, openai, mongodb" />
@@ -55,7 +55,7 @@
 						class="form-check-input"
 						type="checkbox"
 						role="switch"
-						id="server-config-enabled"
+						id="config-enabled"
 						key="enabled" />
 					<span class="form-check-label">Enabled</span>
 				</label>
@@ -77,7 +77,7 @@
 					Cluster
 					<input
 						type="text"
-						id="server-config-cluster"
+						id="config-cluster"
 						key="cluster"
 						class="form-control"
 						placeholder="*" />
@@ -87,7 +87,7 @@
 					Server
 					<input
 						type="text"
-						id="server-config-server"
+						id="config-server"
 						key="server"
 						class="form-control"
 						placeholder="* or server ID" />
@@ -97,7 +97,7 @@
 					Worker
 					<input
 						type="text"
-						id="server-config-worker"
+						id="config-worker"
 						key="worker"
 						class="form-control"
 						placeholder="* or worker ID" />
@@ -115,7 +115,7 @@
 			</p>
 			<div class="component-code border rounded p-3">
     <pre aria-hidden="true"><code class="language-json"></code></pre>
-    <textarea id="server-config-json-form" key="config" type="code" lang="json"
+    <textarea id="config-json-form" key="config" type="code" lang="json"
         value-type="json" value-evaluate="false" height="auto" rows="1"
         class="form-control font-monospace" spellcheck="false"
         aria-label="Runtime configuration" required></textarea>

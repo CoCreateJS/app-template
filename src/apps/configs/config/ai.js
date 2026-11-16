@@ -5,10 +5,10 @@
  ********************************************************************************/
 
 /**
- * Seeding Payload: servers_config collection
+ * Seeding Payload: configs collection
  * 
  * AI configuration entries for server-side copilots and provider definitions
- * stored in the 'servers_config' array.
+ * stored in the 'configs' array.
  *
  * Each AI provider is a separate top-level `ai` object alongside system-level
  * defaults; provider config is namespaced under "providers.<name>" dot-keys
@@ -24,7 +24,7 @@
  */
 export default {
     "method": "object.update",
-    "array": "servers_config",
+    "array": "configs",
     "upsert": true,
     "object": [
         {
@@ -46,7 +46,7 @@ export default {
                 "allowPlatformCommands": true,
                 "platformCommandTimeout": 600000,
                 "platformCommandMaxOutputBytes": 1048576,
-                "localFsRoot": "/home/ubuntu/Dev/CoCreate-server/organizations",
+                "localFsRoot": "/home/ubuntu/Dev/CoCreateJS/server/organizations",
                 "publicPath": "/public",
                 "tools": {
                     "crud": {
@@ -645,7 +645,7 @@ export default {
                         }
                     },
                     "manage_server_cluster": {
-                        "description": "Inspects and controls CoCreate servers. list/get read the servers collection; self returns the running process; control dispatches validated worker or master operations through server.send. Infrastructure uses provider-agnostic vmId and vmType fields. Worker controls are cordon, shed, and drain. restart may target a worker or, when worker is omitted, the master application. reboot and shutdown target the master host. Explain the effect and obtain clear user intent before state-changing operations. RESTRICTED: platform organization only.",
+                        "description": "Inspects and controls CoCreate servers. list/get read the servers collection; self returns the running process; control dispatches validated worker or master operations through server.send. Deployment contains provider-agnostic id/type, cloud, dns and location fields. Worker controls are cordon, shed, and drain. restart may target a worker or, when worker is omitted, the master application. reboot and shutdown target the master host. Explain the effect and obtain clear user intent before state-changing operations. RESTRICTED: platform organization only.",
                         "parameters": {
                             "type": "object",
                             "properties": {

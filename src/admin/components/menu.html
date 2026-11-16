@@ -289,17 +289,17 @@
 			<li
 				class="nav-item d-flex justify-content-between align-items-center">
 				<a
-					id="account-server-configs-list-btn"
+					id="account-configs-list-btn"
 					state-to="adminView"
 					state.src="/components/list/index.html"
 					class="nav-link menu-link"
-					title="Server Configurations">
+					title="Configs">
 					<i src="/assets/svg/remix/settings-3-line.svg"></i>
-					<span>Server Configurations</span>
+					<span>Configs</span>
 					<div
 						state-to="app"
 						state.object="6a96308fbe321a28ad3edec1"
-						state.input.array="servers_config"></div>
+						state.input.array="configs"></div>
 					<div
 						state-to="table"
 						state.filter-query-key=""
@@ -309,22 +309,22 @@
 						state.filter-query-key=""
 						state.filter-query-value=""
 						state.filter-query-options=""
-						state.src="/apps/servers/configs/templates/card.html"></div>
+						state.src="/apps/configs/templates/card.html"></div>
 				</a>
 				<a
 					class="nav-link nav-action"
 					state-to="create-panel-view"
-					state.src="/apps/servers/configs/create.html"
+					state.src="/apps/configs/create.html"
 					aria-controls="create-panel"
 					aria-haspopup="dialog"
 					aria-expanded="false"
 					aria-open
-					aria-label="Create server configuration"
-					title="Create server configuration">
+					aria-label="Create config"
+					title="Create config">
 					<div
 						state-to="offcanvas-app-form"
 						state.$reset
-						state.array="servers_config"></div>
+						state.array="configs"></div>
 					<i src="/assets/svg/remix/add-line.svg"></i>
 				</a>
 			</li>
@@ -368,7 +368,7 @@
 			</li>
 			<li class="nav-item">
 				<a
-					id="account-routing-providers-list-btn"
+					id="account-dns-providers-list-btn"
 					state-to="create-panel-view"
 					state.src="/apps/apis/providers/index.html"
 					aria-controls="create-panel"
@@ -376,12 +376,12 @@
 					aria-expanded="false"
 					aria-open
 					class="nav-link menu-link"
-					title="Routing Providers">
+					title="DNS Providers">
 					<i src="/assets/svg/remix/route-line.svg"></i
-					><span>Routing Providers</span>
+					><span>DNS Providers</span>
 					<div
 						state-to="provider-view"
-						state.src="/apps/apis/providers/routing.html"></div>
+						state.src="/apps/apis/providers/dns.html"></div>
 				</a>
 			</li>
 			<li class="nav-item">

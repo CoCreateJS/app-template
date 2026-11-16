@@ -5,18 +5,18 @@
  ********************************************************************************/
 
 /**
- * Seeding Payload: servers_config collection
+ * Seeding Payload: configs collection
  * 
  * Telemetry configuration entries for metric collection and write intervals,
  * retention policy, broadcast options, and cluster scale/safety thresholds
- * stored in the 'servers_config' array.
+ * stored in the 'configs' array.
  * 
  * Note: Telemetry-related settings are represented as individual objects
- * within the 'servers_config' array.
+ * within the 'configs' array.
  */
 export default {
     "method": "object.update",
-    "array": "servers_config",
+    "array": "configs",
     "upsert": true,
     "object": [
         {

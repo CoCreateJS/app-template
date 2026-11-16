@@ -753,9 +753,9 @@ Orchestrates user CLI prompts, choices, configuration file imports, and env vari
 								</template>
 							</article>
 						
-							<article class="docs-symbol" id="merge-server-configs">
+							<article class="docs-symbol" id="merge-configs">
 								<div class="docs-symbol-heading">
-									<h2>mergeServerConfigs</h2>
+									<h2>mergeConfigs</h2>
 									<span class="docs-kind">function</span>
 								</div>
 								<p>Utility to merge multiple micro-configuration documents matching target scope rules.
@@ -836,7 +836,7 @@ array, and ordinary paths replace the existing value.</p>
 									<h2>query</h2>
 									<span class="docs-kind">function</span>
 								</div>
-								<p>Asynchronously queries the `servers_config` collection via CoCreate CRUD (`object.read`)
+								<p>Asynchronously queries the `configs` collection via CoCreate CRUD (`object.read`)
 matching the target runtime scope (`cluster`, `server`, `worker`) and merges them into an operational object.</p>
 
 								<h3>Parameters</h3>

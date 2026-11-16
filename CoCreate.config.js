@@ -51,7 +51,7 @@ export default {
     template: [
         {
             entry: "./",
-            output: "../CoCreate-app-template",
+            output: "../app-template",
             exclude: [
                 "./.git/",
                 "./.github/",
@@ -70,7 +70,7 @@ export default {
         },
         {
             entry: "./",
-            output: "../CoCreate-app-template",
+            output: "../app-template",
             include: ["./src/admin/", "./src/apps/"],
             exclude: [
             ]
@@ -112,262 +112,262 @@ export default {
      */
     modules: {
         utils: {
-            path: "../CoCreate-modules/utils",
+            path: "../modules/utils",
             repo: "github.com/CoCreateJS/CoCreate-utils.git"
         },
         cli: {
-            path: "../CoCreate-modules/cli",
+            path: "../modules/cli",
             repo: "github.com/CoCreateJS/CoCreate-cli.git",
             exclude: ["git"]
         },
         serviceWorker: {
             import: "@cocreate/service-worker",
-            path: "../CoCreate-modules/service-worker",
+            path: "../modules/service-worker",
             repo: "github.com/CoCreateJS/CoCreate-service-worker.git"
         },
         "element-prototype": {
             import: "@cocreate/element-prototype",
-            path: "../CoCreate-modules/element-prototype",
+            path: "../modules/element-prototype",
             repo: "github.com/CoCreateJS/CoCreate-element-prototype.git"
         },
         observer: {
             import: "@cocreate/observer",
-            path: "../CoCreate-modules/observer",
+            path: "../modules/observer",
             repo: "github.com/CoCreateJS/CoCreate-observer.git"
         },
         indexeddb: {
             import: "@cocreate/indexeddb",
-            path: "../CoCreate-storages/indexeddb",
+            path: "../storages/indexeddb",
             repo: "github.com/CoCreateJS/CoCreate-indexeddb.git"
         },
         config: {
             import: "@cocreate/config",
-            path: "../CoCreate-modules/config",
+            path: "../modules/config",
             repo: "github.com/CoCreateJS/CoCreate-config.git"
         },
         socket: {
             import: "@cocreate/socket",
-            path: "../CoCreate-modules/socket",
+            path: "../modules/socket",
             repo: "github.com/CoCreateJS/socket.git"
         },
         events: {
             import: "@cocreate/events",
-            path: "../CoCreate-modules/events",
+            path: "../modules/events",
             repo: "github.com/CoCreateJS/CoCreate-events.git"
         },
         aria: {
             import: "@cocreate/aria",
-            path: "../CoCreate-modules/aria",
+            path: "../modules/aria",
             repo: "github.com/CoCreateJS/CoCreate-aria.git"
         },
         localstorage: {
             import: "@cocreate/local-storage",
             selector: "[storage*='localstorage'], [localstorage-set], [localstorage-get]",
-            path: "../CoCreate-modules/local-storage",
+            path: "../modules/local-storage",
             repo: "github.com/CoCreateJS/CoCreate-local-storage.git"
         },
         crud: {
             import: "@cocreate/crud/client",
             selector: "[crud='true'], [database], [array]",
-            path: "../CoCreate-modules/crud",
+            path: "../modules/crud",
             repo: "github.com/CoCreateJS/crud-server.git"
         },
         state: {
             import: "@cocreate/state",
             selector: "[state-to], [state-id]",
-            path: "../CoCreate-modules/state",
+            path: "../modules/state",
             repo: "github.com/CoCreateJS/CoCreate-state.git"
         },
         cache: {
             import: "@cocreate/cache",
             selector: "[cache='true']",
-            path: "../CoCreate-modules/cache",
+            path: "../modules/cache",
             repo: "github.com/CoCreateJS/CoCreate-cache.git"
         },
         plugins: {
             import: "@cocreate/plugins",
             selector: "[plugins]",
-            path: "../CoCreate-modules/plugins",
-            repo: "github.com/CoCreateJS/CoCreate-plugins.git"
+            path: "../modules/plugins",
+            repo: "github.com/CoCreateJS/plugins.git"
         },
         crdt: {
             import: "@cocreate/crdt",
             selector: "[crdt='true']",
-            path: "../CoCreate-modules/crdt",
+            path: "../modules/crdt",
             repo: "github.com/CoCreateJS/CoCreate-crdt.git"
         },
         cursors: {
             import: "@cocreate/cursors",
             selector: "input[crdt='true'], textarea[crdt='true'], [contenteditable][crdt='true']",
-            path: "../CoCreate-modules/cursors",
+            path: "../modules/cursors",
             repo: "github.com/cocreatejs/CoCreate-cursors.git"
         },
         editor: {
             import: "@cocreate/editor",
             selector: "[editor], code[language], [contenteditable][crdt='true'], input[crdt='true'], textarea[crdt='true'], iframe[crdt='true']",
-            path: "../CoCreate-modules/editor",
+            path: "../modules/editor",
             repo: "github.com/cocreatejs/CoCreate-editor.git"
         },
         cssParser: {
             import: "@cocreate/css-parser",
             selector: "link[array][object][key], link[parse]",
-            path: "../CoCreate-modules/css-parser",
+            path: "../modules/css-parser",
             repo: "github.com/CoCreateJS/CoCreate-css-parser.git"
         },
         actions: {
             import: "@cocreate/actions",
             selector: "[actions]",
-            path: "../CoCreate-modules/actions",
+            path: "../modules/actions",
             repo: "github.com/CoCreateJS/CoCreate-actions.git"
         },
         filter: {
             import: "@cocreate/filter",
             selector: "[filter-query]",
-            path: "../CoCreate-modules/filter",
+            path: "../modules/filter",
             repo: "github.com/CoCreateJS/CoCreate-filter.git"
         },
         render: {
             import: "@cocreate/render",
             selector: "[render], [render-query], [template], template",
-            path: "../CoCreate-modules/render",
+            path: "../modules/render",
             repo: "github.com/CoCreateJS/CoCreate-render.git"
         },
         file: {
             import: "@cocreate/file",
             selector: "[type='file'], [actions*='upload'], [actions*='download'], [actions*='saveLocally'], [actions*='import'], [actions*='export'], [actions*='createFile'], [actions*='deleteFile'], [actions*='createDirectory'], [actions*='deleteDirectory']",
-            path: "../CoCreate-modules/file",
+            path: "../modules/file",
             repo: "github.com/CoCreateJS/CoCreate-file.git"
         },
         elements: {
             import: "@cocreate/elements",
             selector: "form, [src], [storage], [database], [array], [href], [target], [actions*='disableHref'], [actions*='enableHref']",
-            path: "../CoCreate-modules/elements",
+            path: "../modules/elements",
             repo: "github.com/CoCreateJS/CoCreate-elements.git"
         },
         workflows: {
             import: "@cocreate/workflows",
             selector: "[workflow]",
-            path: "../CoCreate-modules/workflows",
+            path: "../modules/workflows",
             repo: "github.com/CoCreateJS/CoCreate-workflows.git"
         },
         api: {
             import: "@cocreate/api",
             selector: "[actions], [template_id]",
-            path: "../CoCreate-modules/api",
+            path: "../modules/api",
             repo: "github.com/CoCreateJS/CoCreate-api.git"
         },
         position: {
             import: "@cocreate/position",
             selector: "[draggable], [draggable-query], [clonable-query], [droppable-query], [position-target], [position-query]",
-            path: "../CoCreate-modules/position",
+            path: "../modules/position",
             repo: "github.com/CoCreateJS/CoCreate-position.git"
         },
         scroll: {
             import: "@cocreate/scroll",
             selector: "[scroll], [scroll-to], [scrollable-x], [scrollable-y]",
-            path: "../CoCreate-modules/scroll",
+            path: "../modules/scroll",
             repo: "github.com/CoCreateJS/CoCreate-scroll.git"
         },
         scrollbar: {
             import: "@cocreate/scrollbar",
             selector: "[scrollbar]",
-            path: "../CoCreate-modules/scrollbar",
+            path: "../modules/scrollbar",
             repo: "github.com/cocreatejs/CoCreate-scrollbar.git"
         },
         resize: {
             import: "@cocreate/resize",
             selector: "[resize], [height='auto']",
-            path: "../CoCreate-modules/resize",
+            path: "../modules/resize",
             repo: "github.com/CoCreateJS/CoCreate-resize.git"
         },
         organizations: {
             import: "@cocreate/organizations",
             selector: "[actions*='createOrganization'], [actions*='createEnvironments']",
-            path: "../CoCreate-modules/organizations",
+            path: "../modules/organizations",
             repo: "github.com/CoCreateJS/CoCreate-organizations.git"
         },
         users: {
             import: "@cocreate/users",
             selector: "[session], [actions*='signUp'], [actions*='signIn'], [actions*='inviteUser'], [actions*='acceptInvite'], [actions*='forgotPassword'], [actions*='resetPassword'], [actions*='signOut'], [user-status]",
-            path: "../CoCreate-modules/users",
+            path: "../modules/users",
             repo: "github.com/CoCreateJS/CoCreate-users.git"
         },
         search: {
             import: "@cocreate/search",
             selector: "[search-query]",
-            path: "../CoCreate-modules/search",
+            path: "../modules/search",
             repo: "github.com/CoCreateJS/CoCreate-search.git"
         },
         clipboard: {
             import: "@cocreate/clipboard",
             selector: "[actions*='clipboard'], [clipboard], [clipboard-query]",
-            path: "../CoCreate-modules/clipboard",
+            path: "../modules/clipboard",
             repo: "github.com/CoCreateJS/CoCreate-clipboard.git"
         },
         print: {
             import: "@cocreate/print",
             selector: "[actions*='print'], [print-query]",
-            path: "../CoCreate-modules/print",
+            path: "../modules/print",
             repo: "github.com/CoCreateJS/CoCreate-print.git"
         },
         fullscreen: {
             import: "@cocreate/fullscreen",
             selector: "[fullscreen]",
-            path: "../CoCreate-modules/fullscreen",
+            path: "../modules/fullscreen",
             repo: "github.com/CoCreateJS/CoCreate-fullscreen.git"
         },
         pwa: {
             import: "@cocreate/pwa",
             selector: "[actions*='install']",
-            path: "../CoCreate-modules/pwa",
+            path: "../modules/pwa",
             repo: "github.com/CoCreateJS/CoCreate-pwa.git"
         },
         notification: {
             import: "@cocreate/notification",
             selector: "[actions*='notification']",
-            path: "../CoCreate-modules/notification",
+            path: "../modules/notification",
             repo: "github.com/CoCreateJS/CoCreate-notification.git"
         },
         geolocation: {
             import: "@cocreate/geolocation",
             selector: "[actions*='geoLocation']",
-            path: "../CoCreate-modules/geolocation",
+            path: "../modules/geolocation",
             repo: "github.com/CoCreateJS/CoCreate-geolocation.git"
         },
         speechRecognition: {
             import: "@cocreate/speech-recognition",
             selector: "[speech-recognition]",
-            path: "../CoCreate-modules/speech-recognition",
+            path: "../modules/speech-recognition",
             repo: "github.com/CoCreateJS/CoCreate-speech-recognition.git"
         },
         speechSynthesis: {
             import: "@cocreate/speech-synthesis",
             selector: "[speech-synthesis]",
-            path: "../CoCreate-modules/speech-synthesis",
+            path: "../modules/speech-synthesis",
             repo: "github.com/CoCreateJS/CoCreate-speech-synthesis.git"
         },
         webShare: {
             import: "@cocreate/web-share",
             selector: "[share], [actions*='share']",
-            path: "../CoCreate-modules/web-share",
+            path: "../modules/web-share",
             repo: "github.com/CoCreateJS/CoCreate-web-share.git"
         },
         contactPicker: {
             import: "@cocreate/contact-picker",
             selector: "[actions*='getContacts']",
-            path: "../CoCreate-modules/contact-picker",
+            path: "../modules/contact-picker",
             repo: "github.com/CoCreateJS/CoCreate-contact-picker.git"
         },
         wakeLock: {
             import: "@cocreate/wake-lock",
             selector: "[wake-lock], [actions*='wakeLock']",
-            path: "../CoCreate-modules/wake-lock",
+            path: "../modules/wake-lock",
             repo: "github.com/CoCreateJS/CoCreate-wake-lock.git"
         },
         validation: {
             import: "@cocreate/validation",
             selector: "[actions*='validate'], [required]",
-            path: "../CoCreate-modules/validation",
+            path: "../modules/validation",
             repo: "github.com/CoCreateJS/CoCreate-validation.git"
         }
     },
@@ -383,7 +383,7 @@ export default {
      */
     plugins: {
         webpack: {
-            path: "../CoCreate-plugins/webpack",
+            path: "../plugins/webpack",
             repo: "github.com/CoCreateJS/Webpack.git"
         },
         Toastify: {
@@ -523,7 +523,7 @@ export default {
      */
     projects: {
         CoCreateWS: {
-            path: "../CoCreate-app",
+            path: "../app",
             repo: "https://github.com/cocreatejs/CoCreate-app.git",
             exclude: ["git"]
         }
