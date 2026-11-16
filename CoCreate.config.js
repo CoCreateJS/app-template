@@ -524,7 +524,7 @@ export default {
     projects: {
         CoCreateWS: {
             path: "../app",
-            repo: "https://github.com/cocreatejs/CoCreate-app.git",
+            repo: "https://github.com/CoCreateJS/app.git",
             exclude: ["git"]
         }
     }

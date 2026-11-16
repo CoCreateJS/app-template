@@ -24,7 +24,7 @@ export default {
             "getEndpoint": "get-organization-repository",
             "createEndpoint": "create-organization-repository",
             "owner": "CoCreate-organizations",
-            "templateUrl": "https://github.com/CoCreateJS/CoCreate-app-template.git",
+            "templateUrl": "https://github.com/CoCreateJS/app-template.git",
             "gitBinary": "git"
         }
     }
