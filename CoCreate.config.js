@@ -384,7 +384,7 @@ export default {
     plugins: {
         webpack: {
             path: "../plugins/webpack",
-            repo: "github.com/CoCreateJS/Webpack.git"
+            repo: "github.com/CoCreateJS/webpack.git"
         },
         Toastify: {
             js: [{ src: "https://cdn.jsdelivr.net/npm/toastify-js", crossOrigin: "anonymous" }],
